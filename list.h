@@ -1,5 +1,5 @@
-#ifndef VECTOR_H__
-#define VECTOR_H__
+#ifndef LIST_H__
+#define LIST_H__
 
 #include <stdlib.h>
 
@@ -38,7 +38,7 @@ unsigned int C_List_Capacity(C_List *p_ls) {
 void C_List_Push(C_List *p_ls, void *p_elem) {
     /* Check for capacity */
     if(p_ls->size >= p_ls->capacity) {
-        /* Resize Vector */
+        /* Resize List */
         p_ls->elements = realloc(p_ls->elements, sizeof(void *) * p_ls->capacity * 2);
         p_ls->capacity *= 2;
     }
@@ -89,4 +89,4 @@ void C_List_Replace(C_List *p_ls, unsigned int index, void *p_elem) {
     p_ls->elements[index] = p_elem; // set element at index
 }
 
-#endif // VECTOR_H__
+#endif // LIST_H__
